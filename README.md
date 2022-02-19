@@ -2,9 +2,9 @@
 **Key Skills Involved:** *MVVM, Sets, TapGesture, Alerts(to be updated for iOS15), GeometryReader.*
 
  X | O | 
-- - - - -
+_________
  O | X | O 
-- - - --
+_________
  X | X |  
 
 This will be one of my small side projects to work on off serious large projects.
