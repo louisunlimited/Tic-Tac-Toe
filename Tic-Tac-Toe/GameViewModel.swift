@@ -21,13 +21,31 @@ final class GameViewModel: ObservableObject {
     
     func processPlayerMove(for position: Int) {
         
-            // If square is taken, return and don't do anything
-            if isSquareOccupied(in: moves, forIndex: position) { return }
-            moves[position] = Move(player: .human, boardIndex: position)
+        // If square is taken, return and don't do anything
+        if isSquareOccupied(in: moves, forIndex: position) { return }
+        moves[position] = Move(player: .human, boardIndex: position)
+        
+        // Check for win condition
+        if checkWinCondition(for: .human, in: moves) {
+            alertItem = AlertContext.humanWin
+            return
+        }
+        
+        if checkDrawCondition(in: moves) {
+            alertItem = AlertContext.draw
+            return
+        }
+        
+        isGameboardDisabled = true;
+        
+        
+        // 0.5 s delay to make the machine move more natural
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0.2 ..< 1)) { [self] in
+            let computerPosition = determineComputerMovePosition(in: moves)
+            moves[computerPosition] = Move(player: .computer, boardIndex: computerPosition)
             
-            // Check for win condition
-            if checkWinCondition(for: .human, in: moves) {
-                alertItem = AlertContext.humanWin
+            if checkWinCondition(for: .computer, in: moves) {
+                alertItem = AlertContext.computerWin
                 return
             }
             
@@ -35,26 +53,8 @@ final class GameViewModel: ObservableObject {
                 alertItem = AlertContext.draw
                 return
             }
-            
-            isGameboardDisabled = true;
-            
-            
-            // 0.5 s delay to make the machine move more natural
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0.2 ..< 1)) { [self] in
-                let computerPosition = determineComputerMovePosition(in: moves)
-                moves[computerPosition] = Move(player: .computer, boardIndex: computerPosition)
-                
-                if checkWinCondition(for: .computer, in: moves) {
-                    alertItem = AlertContext.computerWin
-                    return
-                }
-                
-                if checkDrawCondition(in: moves) {
-                    alertItem = AlertContext.draw
-                    return
-                }
-            }
-            isGameboardDisabled = false;
+        }
+        isGameboardDisabled = false;
     }
     
     func isSquareOccupied(in moves: [Move?], forIndex index: Int) -> Bool {
@@ -70,7 +70,7 @@ final class GameViewModel: ObservableObject {
     func determineComputerMovePosition(in moves: [Move?]) -> Int {
         
         // If can win, win
-            // Check 2 out of 3 in the set
+        // Check 2 out of 3 in the set
         let winPatterns: Set<Set<Int>> = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
         
         let computerMoves = moves.compactMap { $0 }.filter {$0.player == .computer}
