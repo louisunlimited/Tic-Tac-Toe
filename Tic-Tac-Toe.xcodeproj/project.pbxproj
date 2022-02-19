@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		DF35634C27C06E0100A51A24 /* Tic_Tac_ToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35634B27C06E0100A51A24 /* Tic_Tac_ToeApp.swift */; };
-		DF35634E27C06E0100A51A24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35634D27C06E0100A51A24 /* ContentView.swift */; };
+		DF35634E27C06E0100A51A24 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35634D27C06E0100A51A24 /* GameView.swift */; };
 		DF35635027C06E0200A51A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF35634F27C06E0200A51A24 /* Assets.xcassets */; };
 		DF35635327C06E0200A51A24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF35635227C06E0200A51A24 /* Preview Assets.xcassets */; };
+		DF73122827C0A413004E6620 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73122727C0A413004E6620 /* Alerts.swift */; };
+		DF73122A27C0AA23004E6620 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73122927C0AA23004E6620 /* GameViewModel.swift */; };
+		DF73122C27C0B27B004E6620 /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73122B27C0B27B004E6620 /* GameSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF35634827C06E0100A51A24 /* Tic-Tac-Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic-Tac-Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF35634B27C06E0100A51A24 /* Tic_Tac_ToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeApp.swift; sourceTree = "<group>"; };
-		DF35634D27C06E0100A51A24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF35634D27C06E0100A51A24 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DF35634F27C06E0200A51A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF35635227C06E0200A51A24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF73122627C09E93004E6620 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		DF73122727C0A413004E6620 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		DF73122927C0AA23004E6620 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		DF73122B27C0B27B004E6620 /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,12 @@
 		DF35634A27C06E0100A51A24 /* Tic-Tac-Toe */ = {
 			isa = PBXGroup;
 			children = (
+				DF73122627C09E93004E6620 /* README.md */,
 				DF35634B27C06E0100A51A24 /* Tic_Tac_ToeApp.swift */,
-				DF35634D27C06E0100A51A24 /* ContentView.swift */,
+				DF35634D27C06E0100A51A24 /* GameView.swift */,
+				DF73122927C0AA23004E6620 /* GameViewModel.swift */,
+				DF73122B27C0B27B004E6620 /* GameSetting.swift */,
+				DF73122727C0A413004E6620 /* Alerts.swift */,
 				DF35634F27C06E0200A51A24 /* Assets.xcassets */,
 				DF35635127C06E0200A51A24 /* Preview Content */,
 			);
@@ -137,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF35634E27C06E0100A51A24 /* ContentView.swift in Sources */,
+				DF73122A27C0AA23004E6620 /* GameViewModel.swift in Sources */,
+				DF35634E27C06E0100A51A24 /* GameView.swift in Sources */,
+				DF73122827C0A413004E6620 /* Alerts.swift in Sources */,
 				DF35634C27C06E0100A51A24 /* Tic_Tac_ToeApp.swift in Sources */,
+				DF73122C27C0B27B004E6620 /* GameSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
