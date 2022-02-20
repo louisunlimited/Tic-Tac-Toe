@@ -43,7 +43,7 @@ final class GameViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0.2 ..< 1)) { [self] in
             let computerPosition = determineComputerMovePosition(in: moves)
             moves[computerPosition] = Move(player: .computer, boardIndex: computerPosition)
-            
+            isGameboardDisabled = false;
             if checkWinCondition(for: .computer, in: moves) {
                 alertItem = AlertContext.computerWin
                 return
@@ -54,7 +54,6 @@ final class GameViewModel: ObservableObject {
                 return
             }
         }
-        isGameboardDisabled = false;
     }
     
     func isSquareOccupied(in moves: [Move?], forIndex index: Int) -> Bool {
