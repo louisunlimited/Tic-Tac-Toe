@@ -1,9 +1,9 @@
 # Tic-Tac-Toe Game with "Stupid" AI!
 **Key Skills Involved:** *MVVM, Sets, TapGesture, Alerts(to be updated for iOS15), GeometryReader.*
 
- | X | O |   |
- | O | X | O |
- | X | X |   |
+ | X | O |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <br>
+ | O | X | O | <br>
+ | X | X |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
 This will be one of my small side projects to work on off serious large projects.
 
